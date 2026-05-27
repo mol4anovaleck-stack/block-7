@@ -1,2 +1,3 @@
 Деплой по ссылке:
-https://brightbtw.github.io/block7/
+https://mol4anovaleck-stack.github.io/block-7/
+
