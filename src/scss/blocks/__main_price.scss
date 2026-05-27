@@ -1,0 +1,251 @@
+.price {
+  @include flexColumn;
+  row-gap: 1rem;
+  @media (max-width: ($tablet - 1)) {
+    margin-top: -1rem;
+  }
+
+  &__item {
+    @include flexColumn;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 12.5rem;
+    background-color: $white;
+    border-radius: 0.375rem;
+    border: 0.0625rem solid $platinum;
+    padding: 1rem;
+    width: 16.25rem;
+    height: 12.5rem;
+
+    &:first-child {
+      display: none;
+    }
+  }
+
+  &__order-button {
+    position: absolute;
+    display: flex;
+    padding: 0 0.25rem;
+    transform: translate(6.875rem, 8.5rem);
+    background-color: $pink;
+    text-transform: uppercase;
+    font-family: $fontBold;
+    font-size: 0.75rem;
+    line-height: 2rem;
+    color: $white;
+    border-radius: 1rem;
+  }
+
+  &__order-text {
+    padding: 0 0.5rem;
+  }
+
+  &__order-icon {
+    margin-left: auto;
+  }
+
+  &__info {
+    padding: 0 1rem;
+  }
+
+  &__disclaimer,
+  &__value {
+    font-family: $fontRegular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.2px;
+    color: $gunmetal;
+  }
+
+  &__offer {
+    display: flex;
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+    line-height: 1.5rem;
+    color: $gunmetal;
+    font-family: $fontMedium;
+  }
+
+  &__offer-button {
+    @include flexCenter;
+  }
+
+  &__item-divider {
+    display: none;
+  }
+
+  &__label {
+    color: $grey;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    opacity: 0.7;
+    font-family: $fontMedium;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+  br {
+    display: inline;
+  }
+  .price {
+    padding: 0 1.5rem;
+    .price__header {
+      padding: 0;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__list {
+      @include flexColumn;
+      margin-top: 0.375rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__value {
+      br {
+        display: none;
+      }
+    }
+
+    &__item {
+      &.swiper-slide {
+        display: grid;
+        grid-template-columns:
+          minmax(21.75rem, auto) minmax(4.5rem, auto) minmax(5.125rem, auto)
+          7.5rem;
+        padding: 1.5rem;
+        height: auto;
+        width: auto;
+        border: none;
+        border-radius: 0%;
+        background-color: transparent;
+        align-items: center;
+      }
+
+      &:not(:first-child) {
+        background-color: $white;
+      }
+
+      &:nth-child(2) {
+        border-top-left-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+      }
+    }
+
+    &__item-divider {
+      display: block;
+      background-color: $white;
+      div {
+        color: $gunmetal;
+        height: 1px;
+        width: auto;
+        background-color: $platinum;
+        margin: 0 1.5rem;
+      }
+    }
+
+    &__order-button {
+      position: static;
+      margin-left: 0;
+      transform: none;
+    }
+
+    &__disclaimer {
+      display: grid;
+      grid-template-columns: minmax(2rem, 26.25rem) 1fr;
+    }
+
+    &__info {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .price {
+    padding: 0 2rem;
+    .price__header {
+      padding: 0;
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+
+    &__swiper {
+      display: none;
+    }
+
+    &__list {
+      @include flexColumn;
+      margin-top: 0.375rem;
+      margin-bottom: 2rem;
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__item {
+      &.swiper-slide {
+        display: grid;
+        grid-template-columns: 0.98fr 0.5fr 0.5fr 7.5rem;
+        padding: 1.5rem;
+        height: auto;
+        width: auto;
+        border: none;
+        border-radius: 0%;
+        background-color: transparent;
+        align-items: center;
+      }
+
+      &:not(:first-child) {
+        background-color: $white;
+      }
+
+      &:nth-child(2) {
+        border-top-left-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+      }
+    }
+
+    &__item-divider {
+      display: block;
+      background-color: $white;
+      div {
+        color: $gunmetal;
+        height: 1px;
+        width: auto;
+        background-color: $platinum;
+        margin: 0 1.5rem;
+      }
+    }
+
+    &__order-button {
+      position: static;
+      margin-left: 0;
+      transform: none;
+    }
+
+    &__disclaimer {
+      display: grid;
+      grid-template-columns: minmax(2rem, 26.25rem) 1fr;
+    }
+
+    &__info {
+      padding: 0;
+    }
+  }
+}

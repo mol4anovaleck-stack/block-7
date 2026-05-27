@@ -1,0 +1,131 @@
+.brands {
+  @include flexColumn;
+  row-gap: 1rem;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $platinum;
+    border-radius: 0.375rem;
+    list-style: none;
+    height: 4.5rem;
+    padding: 1rem;
+    width: 14rem;
+
+    @media (min-width: $desktop) {
+      width: 15rem;
+    }
+  }
+
+  &__card {
+    @include flexCenter;
+  }
+
+  &__logo--apple {
+    margin-top: -0.5rem;
+  }
+
+  &__logo--hp {
+    margin-left: -0.5rem;
+  }
+
+  &__toggle {
+    @include flexCenter;
+    font-size: 1rem;
+    color: $gunmetal;
+    line-height: 1.5rem;
+    letter-spacing: -0.02px;
+    gap: 0.5rem;
+    font-family: $fontMedium;
+  }
+
+  &__controls {
+    display: none;
+  }
+
+  &__card {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  &__toggle-icon--flip {
+    transform: rotate(180deg);
+  }
+  &__go-button {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+  .brands {
+    padding: 0 1.5rem;
+
+    .brands__header {
+      padding: 0;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+
+    &__list {
+      display: grid;
+      justify-content: space-evenly;
+      gap: 1rem 1.5rem;
+      grid-template-columns: repeat(3, auto);
+    }
+
+    &__controls {
+      display: flex;
+    }
+
+    &__item:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  #brands__toggle--hidden {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop) {
+  .brands {
+    @include flexColumn;
+    padding: 0 2rem;
+
+    .brands__header {
+      padding: 0;
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      justify-content: space-evenly;
+      gap: 1rem 2rem;
+    }
+
+    &__controls {
+      display: flex;
+      margin-top: 0.5rem;
+    }
+
+    &__item:nth-child(n + 9) {
+      display: none;
+    }
+
+    &__item-tablet li,
+    &__toggle--hidden,
+    &__toggle-1120px--hidden,
+    &__toggle-720px--hidden {
+      display: none;
+    }
+  }
+
+  #brands__toggle--hidden {
+    display: none;
+  }
+}

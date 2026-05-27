@@ -1,0 +1,114 @@
+.devices {
+  @include flexColumn;
+  row-gap: 1rem;
+  @media (max-width: ($tablet - 1)) {
+    margin-top: -1rem;
+  }
+
+  &__item p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.2px;
+    margin-right: auto;
+  }
+
+  &__item {
+    @include flexColumn;
+    height: 10rem;
+    justify-content: space-between;
+    background-color: $white;
+    border-radius: 0.375rem;
+    border: 0.0625rem solid $platinum;
+    padding: 1rem;
+    font-family: $fontMedium;
+    width: 14rem;
+
+    @media (min-width: $desktop) {
+      width: 15rem;
+    }
+  }
+
+  &__go-button {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: auto;
+  }
+
+  &__toggle {
+    @include flexCenter;
+    font-size: 1rem;
+    height: 1.5rem;
+    color: $gunmetal;
+    line-height: 1.5rem;
+    letter-spacing: -0.02px;
+    gap: 0.5rem;
+    font-family: $fontMedium;
+  }
+
+  &__controls {
+    display: none;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+  .devices {
+    padding: 0 1.5rem;
+    .devices__header {
+      padding: 0;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: space-evenly;
+      gap: 1rem 1.5rem;
+    }
+
+    &__controls {
+      display: flex;
+    }
+
+    &__item:nth-child(n + 4) {
+      display: none;
+    }
+  }
+
+  #devices__toggle--hidden {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop) {
+  /* Бренды и Устройства */
+  .devices {
+    padding: 0 2rem;
+
+    .devices__header {
+      padding: 0;
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+
+    &__controls {
+      margin-top: 0.5rem;
+      display: flex;
+    }
+
+    &__list {
+      display: grid;
+      justify-content: space-evenly;
+      grid-template-columns: repeat(4, auto);
+      gap: 1rem 2rem;
+    }
+
+    &__item:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
+  #devices__toggle--hidden {
+    display: none;
+  }
+}

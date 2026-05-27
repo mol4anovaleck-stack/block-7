@@ -1,0 +1,139 @@
+/* ========== Сайдбар ========== */
+.nav-sidebar {
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-color: $ghostWhite;
+  width: 20rem;
+  color: $gunmetal;
+  background: $white;
+  height: 100vh;
+
+  &__button,
+  &__contact-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__nav {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  &__button-wrapper,
+  &__contact-button-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__contact-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  &__logo-wrapper {
+    margin-right: 3rem;
+  }
+
+  &__contacts {
+    padding: 1.5rem;
+  }
+
+  &__lang-label {
+    font-family: $fontMedium;
+    font-size: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.375rem;
+    letter-spacing: -0.2px;
+  }
+
+  &__email {
+    font-family: $fontMedium;
+    margin: 1rem 0;
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+  }
+
+  &__phone {
+    font-family: $fontBold;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    height: 2rem;
+    letter-spacing: -0.6px;
+  }
+
+  &__tab-label {
+    display: flex;
+    flex-direction: row;
+    font-family: $fontMedium;
+    color: $gunmetal;
+    align-items: center;
+    padding: 0.25rem 1.25rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    border-left: 0.25rem solid transparent;
+    background-color: transparent;
+    letter-spacing: -0.2px;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__lang-input {
+    display: none;
+  }
+
+  &__tab-input {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  &__tab-input:checked {
+    position: absolute;
+    background-color: $aquamarine;
+    justify-content: center;
+    height: 2rem;
+    width: 0.25rem;
+    border-radius: 0.125rem;
+    left: 1px;
+    color: $grey;
+  }
+
+  &__tab-label:checked {
+    color: $grey;
+  }
+
+  &__tab-label:has(.nav-sidebar__tab-input:checked) {
+    color: $grey;
+  }
+
+  &__lang-label:has(.nav-sidebar__lang-input:checked) {
+    opacity: 0.6;
+  }
+}
+
+@media (min-width: $desktop) {
+  .nav-sidebar {
+    display: flex;
+    position: static;
+    z-index: 0;
+    height: auto;
+    width: auto;
+
+    &__tabs {
+      margin-bottom: 15rem;
+    }
+
+    &__toggle-container {
+      display: none;
+    }
+  }
+}

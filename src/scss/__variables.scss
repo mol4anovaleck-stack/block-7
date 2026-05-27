@@ -1,0 +1,27 @@
+$white: rgba(255, 255, 255, 1);
+$ghostWhite: rgba(248, 248, 248, 1);
+$platinum: rgba(234, 234, 234, 1);
+$gunmetal: rgba(27, 28, 33, 1);
+$pink: rgba(255, 62, 121, 1);
+$honeydew: rgba(217, 255, 245, 1);
+$silver: rgba(181, 182, 188, 1);
+$grey: rgba(126, 126, 130, 1);
+$aquamarine: rgba(65, 246, 215, 1);
+$snow: rgba(254, 252, 252, 0.6);
+$iceberg: rgba(184, 255, 236, 1);
+
+$tablet: 768px;
+$desktop: 1366px;
+
+$fontBold: 'TT Lakes Bold', sans-serif;
+$fontMedium: 'TT Lakes Medium', sans-serif;
+$fontRegular: 'TT Lakes Regular', sans-serif;
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}

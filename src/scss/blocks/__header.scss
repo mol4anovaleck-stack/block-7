@@ -1,0 +1,89 @@
+.header {
+  &__nav {
+    display: flex;
+    min-height: 87px;
+    justify-content: space-between;
+    background-color: $white;
+    align-items: center;
+    border-bottom: 1px solid $honeydew;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  /* Кнопки в навигации */
+  &__button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__item {
+    height: 2.5rem;
+  }
+
+  /* Скрытие текста кнопок навигации */
+  &__button-text {
+    display: none;
+    color: $gunmetal;
+    font-family: $fontMedium;
+  }
+  /* Лого в навигации */
+
+  /* Разделитель в навигации */
+  &__divider {
+    width: 0.125rem;
+    height: 2rem;
+    background-color: $platinum; //#e0e0e0
+    border-radius: 1px;
+    // margin-left: 1rem;
+  }
+
+  /* Списки меню */
+  &__list {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+  }
+  /* Выравнивание элементов в навигации */
+  &__group,
+  &__menu,
+  &__actions {
+    @include flexCenter;
+    gap: 1rem;
+  }
+
+  &__actions {
+    display: none;
+  }
+  /* Центральная часть навигации на мобильных скрыта */
+
+  &__divider--left {
+    display: none;
+  }
+
+  &__divider--right {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: $tablet) {
+  .header {
+    &__actions {
+      display: flex;
+      margin-left: auto;
+      padding: 0;
+    }
+
+    &__divider--left {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .header {
+    &__divider,
+    &__nav {
+      display: none;
+    }
+  }
+}
